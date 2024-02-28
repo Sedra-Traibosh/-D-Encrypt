@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://kit.fontawesome.com/1c106ddf82.js" crossorigin="anonymous"></script>
+    <title>Call Me</title>
+    <link rel="stylesheet" href="call.css">
+</head>
+<body>
+
+    <div class="grid">
+        <nav class="nav box">
+            <header>
+                <h1 style="font-size: 30px;"><i class="fa-solid fa-key" style="color: rgb(206, 118, 83); text-shadow: 2px 2px 13px #009688;"></i> D/Encrypt</h1>
+            
+            </header>
+            <ul >
+                <li><a href="../Home/encryp3.html"><i class="fa-solid fa-house"></i>&nbsp; Home</a> </li>
+                <li><a href="../start/encryp.html" target="_blank"><i class="fa-solid fa-play"></i> Start </a></li>
+                <li><a href="../about/encryp2.html" target="_blank"><i class="fa-solid fa-address-card"></i> About Me </a></li>
+                <li><a href="../Call/call.html" target="_blank"><i class="fa-solid fa-phone-volume"></i>&nbsp;Call Me</a> </li>
+            </ul></nav>
+
+            <div class="call">
+                <form method="post" class="post1">
+                    <input type="text" placeholder="Name" id="name" autocomplete="off">
+                    <input type="email" placeholder="Email" id="email" autocomplete="off">
+                    <input type="text" placeholder="Subject" id="Subject" autocomplete="off">
+                    <textarea id="message" placeholder="Message" cols="30" rows="10"></textarea>
+                    <button id="btn" target="_blank">Send</button>
+                </form>
+                
+        </div>
+
+            <script src="https://smtpjs.com/v3/smtp.js">
+            </script>
+            <script>
+                var btn = document.getElementById('btn');
+                btn.addEventListener('click',function(e){
+                    e.preventDefault()
+                    var name = document.getElementById('name').value;
+                    var email = document.getElementById('email').value;
+                    var Subject = document.getElementById('Subject').value;
+                    var message = document.getElementById('message').value;
+                    var body = 'name: '+name + '<br/> email: ' +email + '<br/> Subject:' +Subject +  '<br/> message: ' +message;
+
+
+                    
+
+
+                    Email.send({
+                        SecureToken : "8b75ac3d-4468-4f90-a738-451baf8f9b19",
+                                To : "sedratraiboush@gmail.com",
+                                From : "strybwsh@gmail.com",
+                                Subject : "contact message",
+                                Body : body
+                        }).then(
+                            message => alert(message)
+                        );
+
+                })
+        
+//const nodemailer = require('nodemailer');
+
+// // إعداد المرسل
+// const transporter = nodemailer.createTransport({
+//   service: 'gmail',
+//   auth: {
+//     user: 'your-email@gmail.com',
+//     pass: 'your-password'
+//   }
+// });
+
+// // إعداد المستلم
+// const mailOptions = {
+//   from: 'strybwsh@gmail.com',
+//   to: 'sedratraiboush@gmail.com',
+//   subject: 'Test Email',
+//   text: 'Hello, this is a test email!'
+// };
+
+// // إرسال البريد الإلكتروني
+// transporter.sendMail(mailOptions, function(error, info){
+//   if (error) {
+//     console.log(error);
+//   } else {
+//     console.log('Email sent: ' + info.response);
+//   }
+// });
+            </script>
+            
+
+            <footer class="foot box">
+                <p class="cp-text">
+                    © Copyright 2023 D/Encrypt. All rights reserved.
+                </p>
+            </footer>
+    
+    
+    
+    
+        </div>
+    
+</body>
+</html>
